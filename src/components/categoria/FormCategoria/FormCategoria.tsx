@@ -8,7 +8,7 @@ import { ClipLoader } from "react-spinners";
 function FormCategoria() {
     const navigate = useNavigate();
 
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    // const [isLoading, setIsLoading] = useState<boolean>(false) 
 
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
 
@@ -41,7 +41,7 @@ function FormCategoria() {
 
     async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        setIsLoading(true)
+        // setIsLoading(true) 
 
         if (id !== undefined) {
             try {
@@ -60,8 +60,6 @@ function FormCategoria() {
         }
     }
 
-    setIsLoading(false)
-    retornar()
 
 
   return (
@@ -87,19 +85,19 @@ function FormCategoria() {
             <button 
                 className="rounded text-slate-100 bg-blue-400 hover:bg-blue-800
                             w-1/2 py-2 mx-auto flex justify-center"
-                type="submit">
+                type="submit"
+                onClick={retornar}>
 
-                { isLoading ? 
+                {/* { isLoading ? 
                     <ClipLoader
                         color="#ffffff"
                         size={24}
-                    /> : 
+                    /> :  */}
                     <span> {id === undefined ? 'Cadastrar' : 'Atualizar'} </span>
-                }    
+                    
+                {/* }     */}
             </button>
-
         </form>
-
     </div>
   )
 }
