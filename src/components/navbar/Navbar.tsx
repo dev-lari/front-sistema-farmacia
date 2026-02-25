@@ -7,11 +7,11 @@ function Navbar() {
                     bg-blue-400 text-white">
         
         <div className="container flex justify-between text-lg mx-8">
-           GenPharma
+           <Link to='/'> LariFarma </Link>
         </div>
 
         <div className="flex gap-4 text-lg font-semibold">
-            Home
+            <Link to='/' className="hover:underline"> Home </Link>
             <Link to='/categorias' className='hover:underline'> Categorias </Link>
             <Link to='/cadastrarcategoria' className="hover:underline"> Cadastrar Categoria </Link>
         </div>
