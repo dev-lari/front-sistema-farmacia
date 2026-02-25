@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import ListaCategorias from './components/categoria/ListaCategoria/ListaCategorias';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,12 +15,18 @@ function App() {
     <>
       <ToastContainer />
       <BrowserRouter>
+        <Navbar />
+        <Home />
+        
+          <Routes>
+
+            <Route path='/categorias' element={<ListaCategorias/>} />
+
+          </Routes>
+        
       
       
-      
-      
-      
-      
+        <Footer />
       </BrowserRouter>
     </>
   )
