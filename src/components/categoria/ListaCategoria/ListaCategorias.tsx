@@ -14,22 +14,21 @@ function ListaCategorias() {
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
-    useEffect(() => {
-        buscarCategorias()
-    }, [categorias.length])
-
-
     async function buscarCategorias() {
         try {
             setIsLoading(true)
 
-            await buscar ('/categorias', setCategorias)
+            await buscar('/categorias', setCategorias)
         } catch (error: any) {
-            ToastAlerta("Busca falhou", "erro")
+            ToastAlerta("Não existem categorias cadastradas", "info")
         }
 
         setIsLoading(false)
     }
+
+    useEffect(() => {
+        buscarCategorias()
+    }, [categorias.length])
 
 
   return (
